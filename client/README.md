@@ -1,3 +1,13 @@
+# About this project
+This is simple MERN project to learn about how backend handle authentication, this is majorly focused on learning of backend technologies
+
+Packages used:
+
+- Vite React app
+- Tailwind css
+- React Router Dom
+- 
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
