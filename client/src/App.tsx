@@ -1,11 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
+import AppBar from "./components/AppBar/AppBar";
+import AppRoutes from "./routes/AppRoutes";
 
 function App() {
-    return (
-        <>
-            <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        </>
-    );
+  return (
+    <BrowserRouter>
+      <AppBar />
+      <AppRoutes />
+    </BrowserRouter>
+  );
 }
 
 export default App;
