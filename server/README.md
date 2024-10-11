@@ -8,3 +8,7 @@ npm run dev
 
 - express
 - nodemon
+- mongodb
+- mongoose
+- dotenv
+
