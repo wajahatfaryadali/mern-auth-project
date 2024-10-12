@@ -1,3 +1,3 @@
-export const testUserController = (req, res) => {
-    res.send('hello world')
+export const userController = (req, res) => {
+    res.send('user res')
 }

@@ -1,12 +1,15 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+
 import userRoutes from "./routes/user.routes.js";
+import authRoutes from "./routes/auth.routes.js"
 
 const PORT = 3000;
 const app = express();
 dotenv.config();
 
+app.use(express.json());
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING).then(() => {
     console.log(`DB connected !`)
@@ -19,4 +22,4 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING).then(() => {
 
 
 app.use('/api/user', userRoutes)
-
+app.use('/api/auth', authRoutes)
