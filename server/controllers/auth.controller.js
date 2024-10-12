@@ -3,6 +3,7 @@ import bcryptjs from "bcryptjs"
 
 export const signUpController = async (req, res, next) => {
     const { username, email, password } = req.body;
+    console.log('encrp ****** ', req.body)
 
     const encryptedPassword = bcryptjs.hashSync(password, 10);
 

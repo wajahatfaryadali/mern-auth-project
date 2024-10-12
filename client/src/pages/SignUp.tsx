@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, SyntheticEvent, useState } from "react";
 import { Link } from "react-router-dom";
 import { URL_LOGIN } from "../routes/RoutesConstants";
 
@@ -16,22 +16,38 @@ const SignUp = () => {
   });
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("eventveventevent ", event.target.name);
-    console.log("eventveventevent ", event.target.value);
     setForm((prevForm) => ({
       ...prevForm,
       [event.target.name]: event.target.value,
     }));
   };
 
-  
+  const handleSubmit = async (event: SyntheticEvent) => {
+    event.preventDefault();
+    const payload = {
+      username: form.name,
+      email: form.email,
+      password: form.password,
+    };
+
+    // POST request using fetch inside useEffect React hook
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    };
+
+    const resp = await fetch("/api/auth/signup", requestOptions);
+
+    console.log("response ******** ", resp);
+  };
 
   return (
     <div className="flex min-[80%] flex-col justify-center px-6 py-12 lg:px-8">
       <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign Up</h2>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" autoComplete="off">
+        <form className="space-y-6" autoComplete="off" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
               User Name
