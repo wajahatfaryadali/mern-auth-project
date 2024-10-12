@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import userRoutes from "./routes/user.routes.js";
 
 const PORT = 3000;
 const app = express();
@@ -16,4 +17,6 @@ mongoose.connect(process.env.MONGODB_CONNECTION_STRING).then(() => {
     console.log('error while connecting to db *** ', error)
 })
 
+
+app.use('/api/user', userRoutes)
 
