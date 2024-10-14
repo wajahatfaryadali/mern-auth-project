@@ -39,6 +39,15 @@ const SignUp = () => {
 
     const resp = await fetch("/api/auth/signup", requestOptions);
 
+    if (resp.ok) {
+      setForm({
+        name: "",
+        email: "",
+        password: "",
+      });
+    } else {
+      window.alert("Error while craeting user");
+    }
     console.log("response ******** ", resp);
   };
 
