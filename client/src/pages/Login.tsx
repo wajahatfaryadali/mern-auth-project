@@ -32,7 +32,7 @@ const Login = () => {
                 Password
               </label>
               <div className="text-sm">
-                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                <a href="#" className="font-semibold text-[#006f00b3] hover:text-[#006f00c9]">
                   Forgot password?
                 </a>
               </div>
@@ -52,7 +52,7 @@ const Login = () => {
           <div>
             <button
               type="submit"
-              className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              className="flex w-full justify-center rounded-md bg-[#006f00b3] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#006f00c9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Sign in
             </button>
@@ -61,7 +61,7 @@ const Login = () => {
 
         <p className="mt-10 text-center text-sm text-gray-500">
           Don't have an account{" "}
-          <Link to={`${URL_SIGN_UP}`} className="text-blue-500 underline font-semibold">Sign Up</Link>
+          <Link to={`${URL_SIGN_UP}`} className="text-blue-500 text-[#006f00b3] underline font-semibold">Sign Up</Link>
         </p>
       </div>
     </div>
